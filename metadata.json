@@ -1,0 +1,6 @@
+{
+  "name": "Executive Precision",
+  "description": "A high-fidelity minimalist portfolio for professional Product and Program Managers, featuring dynamic visualizations, educational timeline, work experiences, skills matrix with mock contact integration, and exploration board.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

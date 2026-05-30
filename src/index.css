@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #000000;
+  --color-brand-charcoal: #191c1d;
+  --color-brand-secondary: #4f625e;
+  --color-brand-mint: #d1e7e1;
+  --color-brand-mint-dark: #374b46;
+  --color-brand-lavender: #e7dff6;
+  --color-brand-lavender-dark: #494457;
+  --color-brand-surface: #f8f9fa;
+  --color-brand-card: #ffffff;
+  --color-brand-border: #e5e7eb;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Hanken Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(229, 231, 235, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+  }
+
+  .glass-modal {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  
+  .glow-mint {
+    background: radial-gradient(circle at 50% 50%, rgba(209, 231, 225, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+  }
+  
+  .glow-purple {
+    background: radial-gradient(circle at 50% 50%, rgba(231, 223, 246, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+  }
+
+  .accent-wash-mint {
+    background: radial-gradient(circle at 50% 50%, rgba(209, 231, 225, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+  }
+  
+  .accent-wash-lavender {
+    background: radial-gradient(circle at 50% 50%, rgba(231, 223, 246, 0.3) 0%, rgba(255, 255, 255, 0) 70%);
+  }
+
+  .progress-gradient {
+    background: linear-gradient(90deg, #60A5FA 0%, #34D399 100%);
+  }
+
+  .hero-gradient {
+    background: radial-gradient(circle at 70% 30%, rgba(209, 231, 225, 0.4) 0%, transparent 60%);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* ==========================================
+   BlobCursor Interactive Dynamic Styles 
+   ========================================== */
+.blob-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none !important;
+  overflow: hidden;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+/* ==========================================
+   Tactile Inverted Cursor Native Resets
+   ========================================== */
+/* Retain system cursor everywhere as requested */
+html, body, * {
+  cursor: auto;
+}
+
+.blob-main {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.blob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+.inner-dot {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(0, 0);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-brand-surface);
+  color: var(--color-brand-charcoal);
+  overflow-x: hidden;
+}
